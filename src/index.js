@@ -5,4 +5,4 @@ import ReactDOM from 'react-dom';
 import TodoApp from './TodoApp';
 
 
-ReactDOM.render(<TodoApp/> , document.getElementById('todoApp'));
+ReactDOM.render(<TodoApp/> , document.getElementById('content'));
