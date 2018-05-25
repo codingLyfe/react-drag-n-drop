@@ -1,0 +1,43 @@
+{
+  "name": "react-drag-n-drop",
+  "version": "1.0.0",
+  "description": "React Drag and Drop",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tbennettcoding/react-drag-n-drop.git"
+  },
+  "author": "Tristan Bennett",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tbennettcoding/react-drag-n-drop/issues"
+  },
+  "homepage": "https://github.com/tbennettcoding/react-drag-n-drop#readme",
+  "dependencies": {
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "react-scripts": "^1.1.4",
+    "webpack": "^4.8.3",
+    "webpack-dev-server": "^3.1.4"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "react",
+      "stage-0"
+    ],
+    "plugins": [
+      "transform-object-rest-spread"
+    ]
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "./node_modules/.bin/babel src -d lib",
+    "dev": "./node_modules/.bin/webpack-dev-server --config .webpack/webpack.dev.config.js",
+    "start": "react-scripts start",
+    "stop": "taskkill -F -IM node.exe"
+  }
+}
