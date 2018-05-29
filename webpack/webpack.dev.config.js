@@ -5,7 +5,7 @@ var parentDir = path.join(__dirname, '../');
 
 module.exports = {
 	entry : [
-		path.jon(__dirname, 'index.js')
+		path.join(__dirname, 'index.js')
 	],
 	module: {
 		loaders: [{
