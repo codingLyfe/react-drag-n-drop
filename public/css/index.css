@@ -9,7 +9,4 @@ html {
             radial-gradient(ellipse at bottom, #4d9f0c, transparent);
 }
 
-.vertical-line {
-    border-right: thick solid black;
-    width: calc(100%-3);   
-}
+

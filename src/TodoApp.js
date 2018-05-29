@@ -1,35 +1,48 @@
 import React, {Component} from 'react';
-import {render} from 'react-dom';
-import {SortableContainer, SortableElement, arrayMove} from 'react-sortable-hoc';
+// import {SortableContainer, SortableElement, SortableHandle, arrayMove} from 'react-sortable-hoc';
 
-const SortableItem = SortableElement(({value}) =>
-  <li>{value}</li>
-);
-
-const SortableList = SortableContainer(({items}) => {
-  return (
-    <ul>
-      {items.map((value, index) => (
-        <SortableItem key={`item-${index}`} index={index} value={value} />
-      ))}
-    </ul>
-  );
-});
-
+var todos = [
+	{
+	  todoTitle: 'First todo',
+	  todoDescription: 'Some kind of description'
+	},
+	{
+	  todoTitle: 'Another todo',
+	  todoDescription: 'Another description'
+	},
+	{
+	  todoTitle: 'And another',
+	  todoDescription: 'Does it matter?'
+	}
+  ]
 
 export default class TodoApp extends Component {
 
-	state = {
-		items: ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5', 'Item 6'],
-	  };
-	  onSortEnd = ({oldIndex, newIndex}) => {
-		this.setState({
-		  items: arrayMove(this.state.items, oldIndex, newIndex),
-		});
-	  };
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			todos
+		};
+	}
+
+
+	
 
 	render() {
-		return <SortableList items={this.state.items} onSortEnd={this.onSortEnd} />;
+		return (
+			<div className="container">
+				 <h4>Todo Count: <span className="badge">{this.state.todos.length}</span></h4>
+				 <ul className="list-group">
+          			{this.state.todos.map((todo, index) =>
+            			<li className="list-group-item" key="{index}">
+                			<h4 className="list-group-item-heading">{todo.todoTitle}</h4>
+                			<p>{todo.todoDescription}</p>
+ 						</li>
+         			 )}
+        		</ul>
+			</div>
+		);
 		
 	}
 }
