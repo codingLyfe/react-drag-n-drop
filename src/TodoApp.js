@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import style from './css/app.css';
 
 let todos = [
 	{
@@ -20,7 +21,7 @@ let todos = [
 		id: '3'
 	},
 	{
-	  todoTitle: 'currently',
+	  todoTitle: 'Currently something to do',
 		todoDescription: 'It should be CURRENT',
 		lane: 'current', 
 		id: '4'
@@ -128,8 +129,9 @@ export default class TodoApp extends Component {
 			return (
 				<div className="container">
 				
-					<h5>Total Todo Count: <span className="badge">{this.state.todos.length}</span></h5>
-					
+					<div className="row">
+						<h5 className="center-todos">Total Todo Count: <span className="badge center-todo-text">{this.state.todos.length}</span></h5>
+					</div>
 
 
 					<div className="row">
@@ -139,7 +141,7 @@ export default class TodoApp extends Component {
 							<ul className="list-group">
 								{this.state.futureTodos.map((futureTodo, index2) =>
 									<li className="list-group-item" key="{index4}">
-											<h5 className="list-group-item-heading">{futureTodo.todoTitle}</h5>
+											<h5 className="list-group-item-heading"><strong>{futureTodo.todoTitle}</strong></h5>
 											<p>{futureTodo.todoDescription}</p>
 									</li>
 								)}
@@ -151,7 +153,7 @@ export default class TodoApp extends Component {
 							<ul className="list-group">
 								{this.state.currentTodos.map((currentTodo, index2) =>
 									<li className="list-group-item" key="{index2}">
-											<h5 className="list-group-item-heading">{currentTodo.todoTitle}</h5>
+											<h5 className="list-group-item-heading"><strong>{currentTodo.todoTitle}</strong></h5>
 											<p>{currentTodo.todoDescription}</p>
 									</li>
 								)}
@@ -163,7 +165,7 @@ export default class TodoApp extends Component {
 								<ul className="list-group">
 												{this.state.repeatTodos.map((repeatTodo, index) =>
 													<li className="list-group-item" key="{index}">
-															<h5 className="list-group-item-heading">{repeatTodo.todoTitle}</h5>
+															<h5 className="list-group-item-heading"><strong>{repeatTodo.todoTitle}</strong></h5>
 															<p>{repeatTodo.todoDescription}</p>
 													</li>
 									)}
@@ -175,7 +177,7 @@ export default class TodoApp extends Component {
 								<ul className="list-group">
 									{this.state.completedTodos.map((completedTodo, index3) =>
 										<li className="list-group-item" key="{index3}">
-											<h5 className="list-group-item-heading">{completedTodo.todoTitle}</h5>
+											<h5 className="list-group-item-heading"><strong>{completedTodo.todoTitle}</strong></h5>
 											<p>{completedTodo.todoDescription}</p>
 										</li>
 									)}
