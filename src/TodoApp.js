@@ -133,7 +133,6 @@ export default class TodoApp extends Component {
 						<h5 className="center-todos">Total Todo Count: <span className="badge center-todo-text">{this.state.todos.length}</span></h5>
 					</div>
 
-
 					<div className="row">
 
 						<div className="col">
@@ -141,8 +140,8 @@ export default class TodoApp extends Component {
 							<ul className="list-group">
 								{this.state.futureTodos.map((futureTodo, index2) =>
 									<li className="list-group-item" key="{index4}">
-											<h5 className="list-group-item-heading"><strong>{futureTodo.todoTitle}</strong></h5>
-											<p>{futureTodo.todoDescription}</p>
+										<h5 className="list-group-item-heading"><strong>{futureTodo.todoTitle}</strong></h5>
+										<p>{futureTodo.todoDescription}</p>
 									</li>
 								)}
 							</ul>
@@ -153,8 +152,8 @@ export default class TodoApp extends Component {
 							<ul className="list-group">
 								{this.state.currentTodos.map((currentTodo, index2) =>
 									<li className="list-group-item" key="{index2}">
-											<h5 className="list-group-item-heading"><strong>{currentTodo.todoTitle}</strong></h5>
-											<p>{currentTodo.todoDescription}</p>
+										<h5 className="list-group-item-heading"><strong>{currentTodo.todoTitle}</strong></h5>
+										<p>{currentTodo.todoDescription}</p>
 									</li>
 								)}
 							</ul>
@@ -163,11 +162,11 @@ export default class TodoApp extends Component {
 						<div className="col">
 							<p>Repeat Todos: {this.state.repeatTodos.length}</p>
 								<ul className="list-group">
-												{this.state.repeatTodos.map((repeatTodo, index) =>
-													<li className="list-group-item" key="{index}">
-															<h5 className="list-group-item-heading"><strong>{repeatTodo.todoTitle}</strong></h5>
-															<p>{repeatTodo.todoDescription}</p>
-													</li>
+									{this.state.repeatTodos.map((repeatTodo, index) =>
+										<li className="list-group-item" key="{index}">
+											<h5 className="list-group-item-heading"><strong>{repeatTodo.todoTitle}</strong></h5>
+											<p>{repeatTodo.todoDescription}</p>
+										</li>
 									)}
 								</ul>
 						</div>
@@ -183,9 +182,7 @@ export default class TodoApp extends Component {
 									)}
 								</ul>
 						</div>
-
 					</div>
-	
 				</div>
 			);
 	}
