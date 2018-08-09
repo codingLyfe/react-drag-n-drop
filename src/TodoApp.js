@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import style from './css/app.css';
+import sytle from './css/app.css';
 
 let todos = [
 	{
@@ -44,7 +44,9 @@ export default class TodoApp extends Component {
 			currentTodos: [],
 			futureTodos: [],
 			repeatTodos: [],
-			completedTodos: []
+			completedTodos: [],
+			mouseX: 0,
+			mouseY: 0
 		};
 
 		this.setLanes = this.setLanes.bind(this);
@@ -53,6 +55,7 @@ export default class TodoApp extends Component {
 	componentDidMount() {
 		window.addEventListener('load', this.setLanes);
 		window.addEventListener('mouseup', this.setLanes);
+		// window.addEventListener('mousemove', this.handleMouseMove);
 	}
 
 	setLanes() {
@@ -96,42 +99,50 @@ export default class TodoApp extends Component {
 			this.setState ({
 				futureTodos: newFutureTodos
 			})
-			
 		}
 		// lane 1
 		if ((this.state.repeatTodos !== previousRepeatTodos) || (this.state.repeatTodos.length === 0)) {	
 			this.setState ({
 				repeatTodos: newRepeatTodos
-			})
-			
+			})			
 		}
-
 		// lane 2
 		if ((this.state.currentTodos !== previousCurrentTodos) || (this.state.currentTodos.length === 0)) {	
 			this.setState ({
 				currentTodos: newCurrentTodos
-			})
-			
+			})	
 		}
-
 		// lane 3
 		if ((this.state.completedTodos !== previousCompletedTodos) || (this.state.completedTodos.length === 0)) {
 			this.setState ({
 				completedTodos: newCompletedTodos
 			})
 		}
-
 		return this.state;		
 	}
 
+	// handleMouseMove(e) {
+	// 	this.setState ({
+	// 		mouseX: e.nativeEvent.offsetX,
+	// 		mouseY: e.nativeEvent.offsetY
+	// 	})
+	// }
+
 	render() {
 		
+		// const posX = this.state.mouseX;
+		// const posY = this.state.mouseY;
+
 			return (
 				<div className="container">
 				
 					<div className="row">
 						<h5 className="center-todos">Total Todo Count: <span className="badge center-todo-text">{this.state.todos.length}</span></h5>
 					</div>
+
+					{/* <div onMouseMove= {this.handleMouseMove.bind(this)}>
+						<p>Mouse Coordinates: {posX} {posY}</p>
+					</div> */}
 
 					<div className="row">
 
